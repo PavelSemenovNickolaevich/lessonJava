@@ -6,7 +6,7 @@ public class Player {
     String name;
     int numberOne;
     int numberTwo;
-    int[] arrOne = new int[10];
+    int[] tryArrayOne = new int[10];
     int[] tryArrayTwo = new int[10];
 
 
