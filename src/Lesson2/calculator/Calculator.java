@@ -1,4 +1,4 @@
-//package com.JavaStart.Lesson_2.calculator;
+package Lesson2.calculator;//package com.JavaStart.Lesson_2.calculator;
 import  java.lang.Object;
 
 

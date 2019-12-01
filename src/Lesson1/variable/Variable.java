@@ -1,5 +1,5 @@
-
-    //package com.JavaStart.Lesson_1.variable;
+package Lesson1.variable;
+//package com.JavaStart.Lesson_1.variable;
 
     public class Variable {
         public static void main(String[] args) {

@@ -1,3 +1,7 @@
+package Lesson2;
+
+import Lesson2.Jaeger;
+
 public class JaegerTest {
 
     public static void main(String[] args) {

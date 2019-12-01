@@ -1,3 +1,5 @@
+package Lesson2;
+
 public class MyFirstGame {
     public static void main(String[] args) {
         int numGamer = 50;

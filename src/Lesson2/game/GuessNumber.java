@@ -1,3 +1,4 @@
+package Lesson2.game;
 
 import java.util.Random;
 import java.util.Scanner;
@@ -19,7 +20,9 @@ public class GuessNumber {
             System.out.print("Введите ваше число игрок " + playerOne.getName() + ": ");
             int numGamerOne = scan.nextInt();
             playerOne.setNumberOne(numGamerOne);
-
+            int[] arrOne = new int[10];
+            for (int i = 0 ; i < arrOne.length ; i++)
+            arrOne[i] = input.nextInt();
             if (numComp > playerOne.getNumberOne()) {
                 System.out.println("Введенное вами число  меньше того, что загадал компьютер, ход следующего игрока");
             } else if (numComp < playerOne.getNumberOne()) {

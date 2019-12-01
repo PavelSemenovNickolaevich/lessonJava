@@ -1,11 +1,13 @@
+package Lesson2.game;
+
 //package com.JavaStart.Lesson_2.player;
 public class Player {
 
     String name;
     int numberOne;
     int numberTwo;
-    int tryArrayOne[];
-    int tryArrayTwo[];
+    int[] arrOne = new int[10];
+    int[] tryArrayTwo = new int[10];
 
 
     public Player(String name) {
@@ -32,4 +34,6 @@ public class Player {
     public int getNumberTwo() {
         return numberTwo;
     }
+
+
 }
