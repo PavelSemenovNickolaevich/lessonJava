@@ -3,11 +3,11 @@ package Lesson2.game;
 //package com.JavaStart.Lesson_2.player;
 public class Player {
 
-    String name;
-    int numberOne;
-    int numberTwo;
-    int[] tryArrayOne = new int[10];
-    int[] tryArrayTwo = new int[10];
+    private String name;
+    private int numberOne;
+    private int numberTwo;
+    private int[] tryArrayOne = new int[10];
+    private int[] tryArrayTwo = new int[10];
 
 
     public Player(String name) {
@@ -35,5 +35,19 @@ public class Player {
         return numberTwo;
     }
 
+    public int[] getTryArrayOne() {
+        return tryArrayOne;
+    }
 
+    public int[] getTryArrayTwo() {
+        return tryArrayTwo;
+    }
+
+    public void setTryArrayOne(int[] tryArrayOne) {
+        this.tryArrayOne = tryArrayOne;
+    }
+
+    public void setTryArrayTwo(int[] tryArrayTwo) {
+        this.tryArrayTwo = tryArrayTwo;
+    }
 }
