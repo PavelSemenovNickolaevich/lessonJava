@@ -19,18 +19,18 @@ public class GuessNumber {
         do {
             System.out.print("Введите ваше число игрок " + playerOne.getName() + ": ");
             int numGamerOne = scan.nextInt();
-            playerOne.setTryArrayOne();
             playerOne.setNumberOne(numGamerOne);
-            //int[] arrOne = new int[10];
-          //  for (int i = 0 ; i < playerOne.getTryArrayOne(10).length ; i++)
-          //  playerOne.getTryArrayOne(10) =  playerOne.getNumberOne();
+         //   playerOne.setTryArrayOne(0, playerOne.getNumberOne());
+            for (int i = 0 ; i < playerOne.getTryArrayOne(10).length ; i++);
+            playerOne.getTryArrayOne(1) = playerOne.setNumberOne(i);
+
             if (numComp > playerOne.getNumberOne()) {
                 System.out.println("Введенное вами число  меньше того, что загадал компьютер, ход следующего игрока");
             } else if (numComp < playerOne.getNumberOne()) {
                 System.out.println("Введенное вами число  больше того, что загадал компьютер, ход следующего игрока ");
             } else if (numComp == playerOne.getNumberOne()) {
                 System.out.println("Вы победили игрок " + playerOne.getName() + " !");
-               //. System.out.println(arrOne[playerOne.getNumberOne()]);
+                System.out.println(playerOne.getTryArrayOne(0));
                 break;
             }
             System.out.print("Введите ваше число игрок " + playerTwo.getName() + ": ");

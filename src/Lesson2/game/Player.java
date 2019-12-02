@@ -35,7 +35,7 @@ public class Player {
         return numberTwo;
     }
 
-    public int[] getTryArrayOne() {
+    public int[] getTryArrayOne(int i) {
         return tryArrayOne;
     }
 
@@ -49,5 +49,8 @@ public class Player {
 
     public void setTryArrayTwo(int[] tryArrayTwo) {
         this.tryArrayTwo = tryArrayTwo;
+    }
+
+    public void setTryArrayOne(int i, int numberOne) {
     }
 }
