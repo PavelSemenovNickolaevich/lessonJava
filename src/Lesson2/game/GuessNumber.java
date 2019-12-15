@@ -1,6 +1,8 @@
 
 package Lesson2.game;
 
+import java.lang.module.FindException;
+import java.net.BindException;
 import java.util.Random;
 import java.util.Scanner;
 
@@ -17,41 +19,40 @@ public class GuessNumber {
     public void guessNum() {
         Scanner scan = new Scanner(System.in);
         int numComp = (int) (Math.random() * 11);
-        do {
-                System.out.print("Введите ваше число игрок " + playerOne.getName() + ": ");
-                int numGamerOne = scan.nextInt();
-                playerOne.setNumber(numGamerOne);
-                playerOne.setArray(numGamerOne, 0);
-                playerOne.setArray(numGamerOne, 1);
-                playerOne.setArray(numGamerOne, 2);
-                playerOne.setArray(numGamerOne, 3);
-                playerOne.setArray(numGamerOne, 4);
-                if (numComp > playerOne.getNumber()) {
-                    System.out.println("Введенное вами число  меньше того, что загадал компьютер, ход следующего игрока");
-                } else if (numComp < playerOne.getNumber()) {
-                    System.out.println("Введенное вами число  больше того, что загадал компьютер, ход следующего игрока ");
-                } else if (numComp == playerOne.getNumber()) {
-                    System.out.println("Вы победили игрок " + playerOne.getName() + " !");
-                    break;
-                }
-                System.out.print("Введите ваше число игрок " + playerTwo.getName() + ": ");
-                int numGamerTwo = scan.nextInt();
-                playerTwo.setNumber(numGamerTwo);
-                playerTwo.setArray(numGamerOne, 0);
-                playerTwo.setArray(numGamerOne, 1);
-                playerTwo.setArray(numGamerOne, 2);
-                playerTwo.setArray(numGamerOne, 3);
-                playerTwo.setArray(numGamerOne, 4);
-                if (numComp > playerTwo.getNumber()) {
-                    System.out.println("Введенное вами число  меньше того, что загадал компьютер, ход следующего игрока");
-                } else if (numComp < playerTwo.getNumber()) {
-                    System.out.println("Введенное вами число  больше того, что загадал компьютер, ход следующего игрока ");
-                } else if (numComp == playerTwo.getNumber()) {
-                    System.out.println("Вы победили игрок " + playerTwo.getName() + " !");
-                    break;
-                }
+        for (int i = 0; i < 10; i++) {
+            System.out.print("Введите ваше число игрок " + playerOne.getName() + ": ");
+            int numGamerOne = scan.nextInt();
+            playerOne.setNumber(numGamerOne);
+            playerOne.getArray(i);
+            playerOne.setArray(numGamerOne, playerOne.getArray(i));
+            if (numComp > playerOne.getNumber()) {
+                System.out.println("Введенное вами число  меньше того, что загадал компьютер, ход следующего игрока");
+            } else if (numComp < playerOne.getNumber()) {
+                System.out.println("Введенное вами число  больше того, что загадал компьютер, ход следующего игрока ");
+            } else if (numComp == playerOne.getNumber()) {
+                System.out.println("Вы победили игрок " + playerOne.getName() + " c " + i + " попытки !");
+                System.out.println((playerOne.getAll()));
             }
-            while (true) ;
+            System.out.print("Введите ваше число игрок " + playerTwo.getName() + ": ");
+            int numGamerTwo = scan.nextInt();
+            playerTwo.setNumber(numGamerTwo);
+            if (numComp > playerTwo.getNumber()) {
+                System.out.println("Введенное вами число  меньше того, что загадал компьютер, ход следующего игрока");
+            } else if (numComp < playerTwo.getNumber()) {
+                System.out.println("Введенное вами число  больше того, что загадал компьютер, ход следующего игрока ");
+            } else if (numComp == playerTwo.getNumber()) {
+                System.out.println("Вы победили игрок " + playerTwo.getName() + " с " + i + " попытки !");
+                break;
+            }
+            if (i == 8) {
+                System.out.println("Игроки! У вас осталась последня попытка!!");
+            }
+            if (i == 9) {
+                System.out.println("Ваши варианты ответов " + playerOne.array[i]);
+                System.out.println("Ваши варианты ответов " + playerTwo.array[i]);
+            }
+        }
     }
 }
+
 
