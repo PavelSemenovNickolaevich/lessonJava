@@ -1,3 +1,4 @@
+
 package Lesson2.game;
 
 import java.util.Random;
@@ -17,33 +18,40 @@ public class GuessNumber {
         Scanner scan = new Scanner(System.in);
         int numComp = (int) (Math.random() * 11);
         do {
-            System.out.print("Введите ваше число игрок " + playerOne.getName() + ": ");
-            int numGamerOne = scan.nextInt();
-            playerOne.setNumberOne(numGamerOne);
-         //   playerOne.setTryArrayOne(0, playerOne.getNumberOne());
-            for (int i = 0 ; i < playerOne.getTryArrayOne(10).length ; i++);
-            playerOne.getTryArrayOne(1) = playerOne.setNumberOne(i);
-
-            if (numComp > playerOne.getNumberOne()) {
-                System.out.println("Введенное вами число  меньше того, что загадал компьютер, ход следующего игрока");
-            } else if (numComp < playerOne.getNumberOne()) {
-                System.out.println("Введенное вами число  больше того, что загадал компьютер, ход следующего игрока ");
-            } else if (numComp == playerOne.getNumberOne()) {
-                System.out.println("Вы победили игрок " + playerOne.getName() + " !");
-                System.out.println(playerOne.getTryArrayOne(0));
-                break;
+                System.out.print("Введите ваше число игрок " + playerOne.getName() + ": ");
+                int numGamerOne = scan.nextInt();
+                playerOne.setNumber(numGamerOne);
+                playerOne.setArray(numGamerOne, 0);
+                playerOne.setArray(numGamerOne, 1);
+                playerOne.setArray(numGamerOne, 2);
+                playerOne.setArray(numGamerOne, 3);
+                playerOne.setArray(numGamerOne, 4);
+                if (numComp > playerOne.getNumber()) {
+                    System.out.println("Введенное вами число  меньше того, что загадал компьютер, ход следующего игрока");
+                } else if (numComp < playerOne.getNumber()) {
+                    System.out.println("Введенное вами число  больше того, что загадал компьютер, ход следующего игрока ");
+                } else if (numComp == playerOne.getNumber()) {
+                    System.out.println("Вы победили игрок " + playerOne.getName() + " !");
+                    break;
+                }
+                System.out.print("Введите ваше число игрок " + playerTwo.getName() + ": ");
+                int numGamerTwo = scan.nextInt();
+                playerTwo.setNumber(numGamerTwo);
+                playerTwo.setArray(numGamerOne, 0);
+                playerTwo.setArray(numGamerOne, 1);
+                playerTwo.setArray(numGamerOne, 2);
+                playerTwo.setArray(numGamerOne, 3);
+                playerTwo.setArray(numGamerOne, 4);
+                if (numComp > playerTwo.getNumber()) {
+                    System.out.println("Введенное вами число  меньше того, что загадал компьютер, ход следующего игрока");
+                } else if (numComp < playerTwo.getNumber()) {
+                    System.out.println("Введенное вами число  больше того, что загадал компьютер, ход следующего игрока ");
+                } else if (numComp == playerTwo.getNumber()) {
+                    System.out.println("Вы победили игрок " + playerTwo.getName() + " !");
+                    break;
+                }
             }
-            System.out.print("Введите ваше число игрок " + playerTwo.getName() + ": ");
-            int numGamerTwo = scan.nextInt();
-            playerTwo.setNumberTwo(numGamerTwo);
-            if (numComp > playerTwo.getNumberTwo()) {
-                System.out.println("Введенное вами число  меньше того, что загадал компьютер, ход следующего игрока");
-            } else if (numComp < playerTwo.getNumberTwo()) {
-                System.out.println("Введенное вами число  больше того, что загадал компьютер, ход следующего игрока ");
-            } else if (numComp == playerTwo.getNumberTwo()) {
-                System.out.println("Вы победили игрок " + playerTwo.getName() + " !");
-                break;
-            }
-        } while (true);
+            while (true) ;
     }
 }
+

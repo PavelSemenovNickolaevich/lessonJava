@@ -15,8 +15,8 @@ public class GuessNumberTest {
         Player playerTwo = new Player(nameTwo);
         String answer = " ";
         do {
-            GuessNumber guessNumber = new GuessNumber(playerOne, playerTwo);
-            guessNumber.guessNum();
+                GuessNumber guessNumber = new GuessNumber(playerOne, playerTwo);
+                guessNumber.guessNum();
             do {
                 System.out.println("Продолжить?[да/нет]");
                 answer = scan.next();

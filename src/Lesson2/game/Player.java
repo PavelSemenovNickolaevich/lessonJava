@@ -1,13 +1,14 @@
 package Lesson2.game;
 
+import java.util.ArrayList;
+import java.util.List;
+
 //package com.JavaStart.Lesson_2.player;
 public class Player {
 
     private String name;
-    private int numberOne;
-    private int numberTwo;
-    private int[] tryArrayOne = new int[10];
-    private int[] tryArrayTwo = new int[10];
+    private int number;
+    public int[] array = new int[5];
 
 
     public Player(String name) {
@@ -19,38 +20,25 @@ public class Player {
         return name;
     }
 
-    public void setNumberOne(int numberOne) {
-        this.numberOne = numberOne;
+    public void setNumber(int number) {
+        this.number= number;
 
     }
 
-    public int getNumberOne() {
-        return numberOne;
-    }
-    public void setNumberTwo(int numberTwo) {
-        this.numberTwo = numberTwo;
+    public int getNumber() {
+        return number;
     }
 
-    public int getNumberTwo() {
-        return numberTwo;
+    int getArray(int index) {
+        return array[index];
     }
 
-    public int[] getTryArrayOne(int i) {
-        return tryArrayOne;
+    public void setArray(int number, int index){
+        array[index] = number;
     }
 
-    public int[] getTryArrayTwo() {
-        return tryArrayTwo;
-    }
-
-    public void setTryArrayOne(int[] tryArrayOne) {
-        this.tryArrayOne = tryArrayOne;
-    }
-
-    public void setTryArrayTwo(int[] tryArrayTwo) {
-        this.tryArrayTwo = tryArrayTwo;
-    }
-
-    public void setTryArrayOne(int i, int numberOne) {
+    public  int[] getAll() {
+        return array;
     }
 }
+
