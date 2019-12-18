@@ -8,7 +8,7 @@ public class Player {
 
     private String name;
     private int number;
-    public int[] array = new int[10];
+    private int[] attempt = new int[10];
 
 
     public Player(String name) {
@@ -29,16 +29,16 @@ public class Player {
         return number;
     }
 
-    int getArray(int index) {
-        return array[index];
+    int getAttempt(int index) {
+        return attempt[index];
     }
 
-    public void setArray(int number, int index){
-        array[index] = number;
+    public void setAttempt(int number, int index) {
+        attempt[index] = number;
     }
 
-    public  int[] getAll() {
-        return array;
+    public int[] getAll() {
+        return attempt;
     }
 }
 
