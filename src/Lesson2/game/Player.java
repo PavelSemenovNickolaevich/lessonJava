@@ -7,38 +7,35 @@ import java.util.List;
 public class Player {
 
     private String name;
-    private int number;
-    private int[] attempt = new int[10];
-
+   // private int number;
+    private int[] attempts = new int[10];
 
     public Player(String name) {
         this.name = name;
-
     }
 
     public String getName() {
         return name;
     }
 
-    public void setNumber(int number) {
-        this.number= number;
-
+    /*public void setNumber(int number) {
+        this.number = number;
     }
 
     public int getNumber() {
         return number;
+    }*/
+
+    int getAttempts(int index) {
+        return attempts[index];
     }
 
-    int getAttempt(int index) {
-        return attempt[index];
-    }
-
-    public void setAttempt(int number, int index) {
-        attempt[index] = number;
+    public void setAttempts(int number, int index) {
+        attempts[index] = number;
     }
 
     public int[] getAll() {
-        return attempt;
+        return attempts;
     }
 }
 
