@@ -17,7 +17,7 @@ public class GuessNumber {
     }
 
     public void guessNum() {
-        int numComp = (int) (Math.random() * 11);
+        int numComp = (int) (Math.random() * 101);
         for (int i = 0; i < 10; i++) {
             enterNumber(playerOne);
             if (compare(playerOne, numComp)) {
