@@ -6,6 +6,7 @@ public class Player {
     private String name;
     private int number;
     private int[] attempts = new int[10];
+    private int attempt = 0;
 
     public Player(String name) {
         this.name = name;
@@ -23,16 +24,20 @@ public class Player {
         this.number = number;
     }
 
-    public int getAttempt(int index) {
-        return attempts[index];
+    public int getAttempt(int attempt) {
+        return attempts[attempt];
     }
 
-    public void setAttempt(int number, int index) {
-        attempts[index] = number;
+    public void setAttempt(int number, int attempt) {
+        attempts[attempt] = number;
     }
 
     public int[] getAll() {
         return attempts;
+    }
+
+    public void incAttempt()  {
+        attempt++;
     }
 
 }
