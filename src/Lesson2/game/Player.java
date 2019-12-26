@@ -1,11 +1,9 @@
 package Lesson2.game;
-
-//package com.JavaStart.Lesson_2.player;
 public class Player {
 
     private String name;
     private int number;
-    private int[] attempts = new int[10];
+    private int[] enteredNumbers = new int[10];
     private int attempt = 0;
 
     public Player(String name) {
@@ -24,16 +22,20 @@ public class Player {
         this.number = number;
     }
 
-    public int getAttempt(int attempt) {
-        return attempts[attempt];
+    public int getEnteredNumbers(int index) {
+        return enteredNumbers[index];
     }
 
-    public void setAttempt(int number, int attempt) {
-        attempts[attempt] = number;
+    public void setEnteredNumbers(int number, int index) {
+        enteredNumbers[index] = number;
     }
 
     public int[] getAll() {
-        return attempts;
+        return enteredNumbers;
+    }
+
+    public int getAttempt() {
+        return attempt;
     }
 
     public void incAttempt()  {

@@ -1,5 +1,4 @@
-package Lesson2.calculator;//package com.JavaStart.Lesson_2.calculator;
-import  java.lang.Object;
+package Lesson2.calculator;
 
 
 public class Calculator {
