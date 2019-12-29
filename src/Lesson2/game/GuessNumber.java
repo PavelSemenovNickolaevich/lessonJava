@@ -14,7 +14,11 @@ public class GuessNumber {
     }
 
     public void guessNum() {
-        numComp = (int) (Math.random() * 101);
+        numComp = (int) (Math.random() * 10);
+        playerOne.delete();
+        playerTwo.delete();
+        playerOne.setAttempt(0);
+        playerTwo.setAttempt(0);
         for (int i = 0; i < 10; i++) {
             enterNumber(playerOne);
             if (compare(playerOne, numComp)) {
@@ -26,11 +30,12 @@ public class GuessNumber {
             }
 
             checkLastAttempt(playerOne);
-            checkAttempts(playerOne);
             checkLastAttempt(playerTwo);
-            checkAttempts(playerTwo);
-            showAttempts(playerOne);
         }
+        checkAttempts(playerOne);
+        checkAttempts(playerTwo);
+        showAttempts(playerOne);
+        showAttempts(playerTwo);
     }
 
     private void checkAttempts(Player player) {
@@ -41,7 +46,7 @@ public class GuessNumber {
 
     private void checkLastAttempt(Player player) {
         if (player.getAttempt() == 9) {
-            System.out.println("Игроки! У вас осталась последня попытка!!");
+            System.out.println("Игрок " + player.getName() + " ! У вас осталась последня попытка!!");
         }
     }
 
@@ -56,14 +61,15 @@ public class GuessNumber {
         }
         return false;
     }
+
     private void enterNumber(Player player) {
         System.out.println("Введите ваше число игрок " + player.getName() + ": ");
         player.setNumber(scan.nextInt());
-        player.getEnteredNumbers(player.getNumber());
+        player.setEnteredNumber(player.getNumber());
         player.incAttempt();
     }
-    private void  showAttempts(Player player) {
-        player.setEnteredNumbers(player.getNumber(), player.getAttempt());
-        System.out.println(Arrays.toString(player.getAll()));
+
+    private void showAttempts(Player player) {
+        System.out.println(Arrays.toString(player.getAll()) + " ваши попытки игрок " + player.getName());
     }
 }

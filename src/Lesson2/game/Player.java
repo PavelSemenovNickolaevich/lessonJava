@@ -1,4 +1,7 @@
 package Lesson2.game;
+
+import java.util.Arrays;
+
 public class Player {
 
     private String name;
@@ -22,12 +25,12 @@ public class Player {
         this.number = number;
     }
 
-    public int getEnteredNumbers(int index) {
-        return enteredNumbers[index];
+    public void setAttempt(int attempt) {
+        this.attempt = attempt;
     }
 
-    public void setEnteredNumbers(int number, int index) {
-        enteredNumbers[index] = number;
+    public void setEnteredNumber(int number) {
+       this.enteredNumbers[attempt] = number;
     }
 
     public int[] getAll() {
@@ -40,6 +43,10 @@ public class Player {
 
     public void incAttempt()  {
         attempt++;
+    }
+
+    public void  delete() {
+        Arrays.fill(enteredNumbers,0,attempt,0);
     }
 
 }
