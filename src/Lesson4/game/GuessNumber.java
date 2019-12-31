@@ -1,4 +1,4 @@
-package Lesson2.game;
+package Lesson4.game;
 import java.util.Arrays;
 import java.util.Scanner;
 
@@ -35,7 +35,7 @@ public class GuessNumber {
     }
 
     public void setUp() {
-        numComp = (int) (Math.random() * 101);
+        numComp = (int) (Math.random() * 10);
 
         playerOne.clear();
         playerTwo.clear();
@@ -45,22 +45,21 @@ public class GuessNumber {
 
     private void enterNumber(Player player) {
         System.out.println("Введите ваше число игрок " + player.getName() + ": ");
-        player.setEnteredNumber(scan.nextInt());
-        player.incAttempt();
+        player.setNumber(scan.nextInt());
+        player.setEnteredNumber(player.getNumber());
     }
 
     private boolean compare(Player player, int numComp) {
-        if (numComp > player.getAttempt()) {
+        if (player.getNumber() < numComp) {
             System.out.println("Введенное вами число  меньше того, что загадал компьютер, ход следующего игрока");
-        } else if (numComp < player.getAttempt()) {
+        } else if (player.getNumber() > numComp) {
             System.out.println("Введенное вами число  больше того, что загадал компьютер, ход следующего игрока ");
-        } else if (numComp == player.getAttempt()) {
-            System.out.println("Вы победили игрок " + player.getName() + " c " + player.getAttempt()  + " попытки !");
+        } else {
+            System.out.println("Вы угадали игрок " + player.getName() + " число " + numComp + " c " + player.getAttempt()  + " попытки !");
             return true;
         }
         return false;
     }
-
 
     private void checkLastAttempt(Player player) {
         if (player.getAttempt() == 9) {
@@ -77,4 +76,5 @@ public class GuessNumber {
     private void showAttempts(Player player) {
         System.out.println(Arrays.toString(player.getAll()) + " ваши попытки игрок " + player.getName());
     }
+
 }

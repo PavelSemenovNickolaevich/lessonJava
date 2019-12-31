@@ -1,6 +1,6 @@
-package Lesson2;
+package Lesson2.jaeger;
 
-import Lesson2.Jaeger;
+import Lesson2.jaeger.Jaeger;
 
 public class JaegerTest {
 

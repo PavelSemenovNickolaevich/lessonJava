@@ -1,4 +1,4 @@
-package Lesson2.game;
+package Lesson4.game;
 
 import java.util.Scanner;
 
@@ -14,8 +14,8 @@ public class GuessNumberTest {
         String nameTwo = scan.next();
         Player playerTwo = new Player(nameTwo);
         String answer = " ";
+        GuessNumber guessNumber = new GuessNumber(playerOne, playerTwo);
         do {
-                GuessNumber guessNumber = new GuessNumber(playerOne, playerTwo);
                 guessNumber.guessNum();
             do {
                 System.out.println("Продолжить?[да/нет]");
